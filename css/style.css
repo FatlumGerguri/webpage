@@ -1,6 +1,62 @@
 
+* {
+    box-sizing: border-box;
+}
 
+html, body {
+    padding-top: 10em;
+    height: 100%;
+}
+@keyframes pan {
+    100% {
+        background-position: 15% 50%;
+    }
+}
 body {
-    background-image: url("img/low-poly-grid-haikei.svg");
+    padding: 0 30px 0 30px;
+    background-image: url('../img/low-poly-grid-haikei.svg');
     background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: pan 6s infinite alternate linear;
+    place-items: center;
+}
+
+.info-cont{
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+
+}
+.row{
+    margin: 0 15em;
+}
+.row::after{
+    content: " ";
+    display: table;
+    padding: 0 24px;
+}
+.column {
+    float: left;
+    width: 23%;
+    padding: 0 5px;
+    margin: 3px ;
+    border-radius: 20px;
+    background-color: #fff;
+}
+/* Responsive columns */
+@media screen and (max-width: 800px) {
+    .row{margin: auto;}
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+}
+.card{
+    text-align: center;
+}
+.card > h3{
+    font-size: 25px;
+    font-weight: 600;
 }
